@@ -98,7 +98,7 @@ public class Retiro {
                     FileWritter escribirArchivo0 = new FileWritter(buscarArchivos.getAbsoluteFile(), true);
                     BufferedWriter escribirArchivos = new BuferredWritter(escribirArchivo0);
                     //lo siguiente se va a agregar al archivo que creamos txt
-                    escribirArchivos.write("retiro|" + retiro + "/n");
+                    escribirArchivos.write("retiro|" + retiro + "\n");
                     escribirArchivos.close();
                 } else {
                     System.out.println("Usted no contiene el dinero suficiente "

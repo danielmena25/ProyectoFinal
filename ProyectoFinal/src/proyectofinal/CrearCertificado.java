@@ -5,14 +5,27 @@
  */
 package proyectofinal;
 
+import java.io.FileNotFoundException;
+import java.util.Formatter;
+
 /**
  *
  * @author Usuario
  */
 class CrearCertificado {
-
-    static void registroCertificado(String numeroCedula, double saldoTotal) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public static void registroCertificado(String numeroCedula, double saldoTotal) throws FileNotFoundException {
+        try {
+            String rutaArchivos = String.format("certificados/certificado_" + numeroCedula + ".txt");
+            Formatter salida = new Formatter(rutaArchivos);
+            salida.format("Certificados de saldos\nIdentificacion de los "
+                    + "clientes:%s\nSaldo a la fecha actual:$%.2f",
+                    numeroCedula, saldoTotal);
+            salida.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(1);
+        }
     }
     
 }

@@ -13,7 +13,14 @@ import java.io.BufferedWriter;
  */
 public class BuferredWritter extends BufferedWriter {
 
+    private final FileWritter escribirArchivo0;
+
+    /**
+     *
+     * @param escribirArchivo0
+     */
     public BuferredWritter(FileWritter escribirArchivo0) {
+        this.escribirArchivo0 = escribirArchivo0;
     }
 
 }
